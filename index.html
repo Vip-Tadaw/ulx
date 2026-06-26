@@ -498,12 +498,6 @@
             const confirm = document.getElementById('regConfirm').value;
             const referral = document.getElementById('regReferral').value.trim(); 
 
-            // حماية تعدد الحسابات
-            if (localStorage.getItem("hasRegisteredOnThisDevice")) {
-                showToast('خطأ أمني: غير مسموح بإنشاء أكثر من حساب من نفس الجهاز مسبقاً!', 'error');
-                return;
-            }
-
             if (!isValidPassword(password)) {
                 triggerError('regPassword', 'كلمة المرور ضعيفة! يجب أن تكون 8 رموز وتتضمن حرفين على الأقل.');
                 return;
